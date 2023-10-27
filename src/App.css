@@ -27,7 +27,40 @@
 .App-link {
   color: #61dafb;
 }
-
+/* styles.css (ou un fichier CSS séparé) */
+.btn-sphere {
+    width: 30px; /* Ajustez la largeur selon vos besoins */
+    height: 30px; /* Ajustez la hauteur selon vos besoins */
+    border-radius: 50%; /* Bord arrondi pour créer une sphère */
+    background-color: #28a745; /* Couleur verte (modifiable) */
+     /* Couleur du texte (modifiable) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; /* Taille de la police (modifiable) */
+    cursor: pointer;
+  }
+  /* styles.css (ou un fichier CSS séparé) */
+.btn-sphere-red {
+    width: 30px; /* Ajustez la largeur selon vos besoins */
+    height: 30px; /* Ajustez la hauteur selon vos besoins */
+    border-radius: 50%; /* Bord arrondi pour créer une sphère */
+    background-color: #dc3545; /* Couleur rouge (modifiable) */
+    color: #fff; /* Couleur du texte (modifiable) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; /* Taille de la police (modifiable) */
+    cursor: pointer;
+  }
+  
+  
+.plus-button {
+    color: white;         /* Couleur du texte en blanc */
+    font-size: 2em;     /* Taille de la police */
+    line-height: 1.5em;   /* Ajustement de la hauteur de ligne pour centrer le texte */
+  }
+  
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

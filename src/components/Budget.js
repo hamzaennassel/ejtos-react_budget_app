@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { AppContext, UPDATE_BUDGET } from '../context/AppContext';
 
 const Budget = () => {
-    const { budget, expenses, dispatch } = useContext(AppContext);
+    const { budget, expenses, dispatch,currency } = useContext(AppContext);
     const [newBudget, setNewBudget] = useState(budget);
     const [showArrows, setShowArrows] = useState(false);
 
@@ -45,7 +45,7 @@ const Budget = () => {
 
     return (
         <div className='alert alert-secondary'>
-            <span>Budget: £</span>
+            <span>Budget: {currency}</span>
             {showArrows && <span onClick={increaseBudget} style={{ cursor: 'pointer' }}>^</span>}
             <input type="number" step="10" value={newBudget} onChange={handleBudgetChange}></input>
             {showArrows && <span onClick={decreaseBudget} style={{ cursor: 'pointer' }}>˅</span>}
