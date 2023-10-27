@@ -69,7 +69,13 @@ export const AppReducer = (state, action) => {
             state.currency = action.payload;
             return {
                 ...state
-            }
+            };
+            case 'UPDATE_BUDGET':
+                // Mise à jour du budget
+                return {
+                    ...state,
+                    budget: action.payload,
+                }; 
 
         default:
             return state;
@@ -91,7 +97,7 @@ const initialState = {
 
 // 2. Creates the context this is the thing our components import and use to get the state
 export const AppContext = createContext();
-
+export const UPDATE_BUDGET = 'UPDATE_BUDGET';
 // 3. Provider component - wraps the components we want to give access to the state
 // Accepts the children, which are the nested(wrapped) components
 export const AppProvider = (props) => {
@@ -100,12 +106,13 @@ export const AppProvider = (props) => {
     let remaining = 0;
 
     if (state.expenses) {
-            const totalExpenses = state.expenses.reduce((total, item) => {
+        const totalExpenses = state.expenses.reduce((total, item) => {
             return (total = total + item.cost);
         }, 0);
         remaining = state.budget - totalExpenses;
+ 
     }
-
+    
     return (
         <AppContext.Provider
             value={{
